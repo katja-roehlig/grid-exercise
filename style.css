@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-bg: aquamarine;
+  --clr-acc: salmon;
+  --clr-darker: rgba(0 0 0 / 0.35);
+}
+
+html {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: black;
+}
+
+h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.125rem;
+  font-size: 1.5em;
+}
+/* === AB HIER DEIN CSS === */
+.grid-child {
+  background-color: var(--clr-bg);
+  padding: 0.7em;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.7em;
+  margin: 0.7em;
+  background-color: white;
+  border: 0.7em solid white;
+}
+.wide {
+  grid-column: span 2;
+}
+.big {
+  grid-column: 3/5;
+  grid-row: 2/4;
+}
+
+@media screen and (max-width: 768px) {
+  .grid-container {
+    display: block;
+  }
+  .grid-child + .grid-child {
+    margin-top: 0.7em;
+  }
+}
